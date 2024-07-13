@@ -5,5 +5,8 @@
 
 {{ config(materialized='table') }}
 
+with final as (
+    select * from STG.CUSTOMER
+)
 select *
-from STG.CUSTOMER
+from final
